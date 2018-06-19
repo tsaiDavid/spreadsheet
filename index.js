@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
       columns.forEach(col => {
         const rowNode = document.createElement('div')
         rowNode.setAttribute('class', 'cell')
-        rowNode.textContent = "cell"
+        rowNode.setAttribute('id', `${col}${row}`)
+        rowNode.addEventListener('click', () => {
+          const inputText = window.prompt('enter field', rowNode.innerText)
+          rowNode.innerText = inputText
+        })
         rowParent.appendChild(rowNode)
       })
 
