@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   columns.forEach(col => {
     const colNode = document.createElement('div')
     colNode.setAttribute('id', col)
-    colNode.setAttribute('class', 'hcell')
+    colNode.setAttribute('class', 'cell hcell')
     colNode.appendChild(document.createTextNode(col))
     header.appendChild(colNode)
   })
@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const rowParent = document.createElement('div')
       rowParent.setAttribute('class', 'row')
       rowParent.setAttribute('id', row)
+
+      columns.forEach(col => {
+        const rowNode = document.createElement('div')
+        rowNode.setAttribute('class', 'cell')
+        rowNode.textContent = "cell"
+        rowParent.appendChild(rowNode)
+      })
+
       table.appendChild(rowParent)
     })
   }
