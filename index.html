@@ -3,6 +3,24 @@
   <head>
     <title>spreadsheet</title>
     <script src="./index.js"></script>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container > .row {
+        min-height: 40px;
+        border: 1px solid red;
+        display: flex;
+      }
+
+      #header > .hcell {
+        width: 100px;
+        border: 1px solid gray;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
